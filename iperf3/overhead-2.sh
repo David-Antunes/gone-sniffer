@@ -5,8 +5,8 @@ gone-cli node -- docker run --rm -d --network gone_net --name server --hostname 
 
 gone-cli bridge bridge1
 
-gone-cli connect -b 10G node client bridge1
-gone-cli connect -b 10G node server bridge1
+gone-cli connect -b 10G -n client bridge1
+gone-cli connect -b 10G -n server bridge1
 
 gone-cli sniff -n client
 gone-cli sniff -n server

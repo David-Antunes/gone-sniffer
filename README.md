@@ -10,3 +10,7 @@ All you need to do is to run the following command to see the output in tcpdump.
 sudo go run main.go /tmp/<id>.sniff | tcpdump -r -
 ```
 
+## Examples
+
+Inside of the folder `ping` there is an example of a network toplogy that uses the sniffing operation in a particular link.
+
