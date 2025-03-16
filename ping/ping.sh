@@ -23,38 +23,38 @@ gone-cli router router1
 gone-cli router router2
 gone-cli router router3
 
-gone-cli connect -b 1G -n ping-1 bridge1
-gone-cli connect -b 1G -n ping-2 bridge1
+gone-cli connect -w 1G -n ping-1 bridge1
+gone-cli connect -w 1G -n ping-2 bridge1
 
-gone-cli connect -b 1G -n ping-3 bridge2
-gone-cli connect -b 1G -n ping-4 bridge2
+gone-cli connect -w 1G -n ping-3 bridge2
+gone-cli connect -w 1G -n ping-4 bridge2
 
-gone-cli connect -b 1G -n ping-5 bridge3
-gone-cli connect -b 1G -n ping-6 bridge3
+gone-cli connect -w 1G -n ping-5 bridge3
+gone-cli connect -w 1G -n ping-6 bridge3
 
-gone-cli connect -b 1G -n ping-7 bridge4
-gone-cli connect -b 1G -n ping-8 bridge4
+gone-cli connect -w 1G -n ping-7 bridge4
+gone-cli connect -w 1G -n ping-8 bridge4
 
-gone-cli connect -b 1G -n ping-9 bridge5
-gone-cli connect -b 1G -n ping-10 bridge5
+gone-cli connect -w 1G -n ping-9 bridge5
+gone-cli connect -w 1G -n ping-10 bridge5
 
-gone-cli connect -b 1G -b bridge1 router1
-gone-cli connect -b 1G -b bridge2 router1
+gone-cli connect -w 1G -b bridge1 router1
+gone-cli connect -w 1G -b bridge2 router1
 
-gone-cli connect -b 1G -b bridge3 router2
-gone-cli connect -b 1G -b bridge4 router2
+gone-cli connect -w 1G -b bridge3 router2
+gone-cli connect -w 1G -b bridge4 router2
 
-gone-cli connect -b 1G -b bridge5 router3
-gone-cli connect -b 1G -r router1 router2
+gone-cli connect -w 1G -b bridge5 router3
+gone-cli connect -w 1G -r router1 router2
 
-gone-cli connect -b 1G -r router2 router3
+gone-cli connect -w 1G -r router2 router3
 
-gone-cli connect -b 1G -r router3 router1
+gone-cli connect -w 1G -r router3 router1
 
 gone-cli propagate router3
 
-gone-cli sniff -i link1 -n ping-1
+gone-cli sniff -i ping-1 -n ping-1
 
 gone-cli unpause -a
 
-sudo go run main.go
+sudo go run main.go | tee results.txt
